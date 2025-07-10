@@ -52,45 +52,46 @@ SUBCSAA (Southern University Bangladesh Computer Science Alumni Association) is 
 
 ### 2. Home Page
 - Dynamic hero section with floating logo animation
-[Screenshot: docs/images/home-hero.png]
+![Home Hero Section](docs/images/home-features.png)
 - Feature highlights with 3 cards showcasing key benefits
 - Facilities section with interactive elements
 - Sign-in integration
-[Screenshot: docs/images/home-features.png]
 
 ### 3. About Page
 - Engaging hero section with gradient text
 - "Who Are We" section with modern layout
 - Animated stats counter
 - Goals section with icon cards
-[Screenshot: docs/images/about-page.png]
+![About Page](docs/images/about-page.png)
 
 ### 4. Alumni Profiles
 - Modern profile cards with hover effects
 - Category badges (Faculty, Industry, Academia)
 - Contact information cards with gradient backgrounds
 - Profile image galleries
-[Screenshot: docs/images/alumni-profiles.png]
+![Alumni Profiles](docs/images/alumni-profiles.png)
 
 ### 5. Events Management
 - Tab-based event categorization (Upcoming, Past, Featured)
 - Modern event cards with date display
 - Registration integration
 - Event image galleries
-[Screenshot: docs/images/events-page.png]
+![Events Page](docs/images/events-page.png)
 
 ### 6. Contact System
 - Interactive contact form
 - Floating contact info cards
 - Subject selection with radio cards
 - Form validation and submission handling
-[Screenshot: docs/images/contact-page.png]
+![Contact Page](docs/images/contact-page.png)
 
 ### 7. Authentication & User Management
 - Secure login system with role-based access
+![Login Page](docs/images/login-page.png)
 - Different dashboards for admin and regular users
+![Admin Dashboard](docs/images/admin-dashboard.png)
+![User Dashboard](docs/images/user-dashboard.png)
 - Profile management system
-[Screenshot: docs/images/login-page.png]
 
 **Admin Features:**
 - User management dashboard
