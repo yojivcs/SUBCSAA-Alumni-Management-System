@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lexend', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #5E3792;
+      box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar a {
+      color: white;
+      display: block;
+      padding: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #4B2C6F;
+      color: white;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      background: linear-gradient(45deg, #F9F9F9, #F1F1F1);
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .event-title {
+      color: #1F2937;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .event-info {
+      color: #4B5563;
+      font-size: 0.95rem;
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .event-description {
+      color: #6B7280;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #E5E7EB;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      height: 32px;
+    }
+
+    .badge-upcoming {
+      background-color: #10B981;
+      color: white;
+    }
+
+    .badge-past {
+      background-color: #6B7280;
+      color: white;
+    }
+
+    .badge-featured {
+      background-color: #5E3792;
+      color: white;
+    }
+
+    .badges-container {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      color: #5E3792;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1 class="text-3xl font-bold mb-8 text-gray-800">Events</h1>
+    <div id="events-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Events will be dynamically loaded here -->
+    </div>
+  </div>
+
+  <!-- Load Sidebar -->
+  <script src="/js/load_sidebar_user.js"></script>
+
+  <script>
+    // Icons in SVG format
+    const icons = {
+      calendar: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+      </svg>`,
+      location: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+      </svg>`,
+      status: `<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+      </svg>`
+    };
+
+    // Format date to be more readable
+    function formatDate(dateString) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+      return new Date(dateString).toLocaleDateString(undefined, options);
+    }
+
+    // Get status badge class based on event status
+    function getStatusBadgeClass(status) {
+      switch(status.toLowerCase()) {
+        case 'upcoming':
+          return 'badge-upcoming';
+        case 'past':
+          return 'badge-past';
+        case 'featured':
+          return 'badge-featured';
+        default:
+          return 'badge-upcoming';
+      }
+    }
+
+    // Fetch and display events
+    function fetchEvents() {
+      fetch('/php/get_events.php')
+        .then(response => response.json())
+        .then(events => {
+          const container = document.getElementById('events-container');
+          container.innerHTML = '';
+          events.forEach(event => {
+            const eventCard = document.createElement('div');
+            eventCard.className = 'event-card';
+
+            eventCard.innerHTML = `
+              <h3 class="event-title">${event.title}</h3>
+              
+              <div class="badges-container">
+                <span class="badge ${getStatusBadgeClass(event.status)}">${event.status}</span>
+              </div>
+
+              <div class="event-info">
+                ${icons.calendar}
+                <span>${formatDate(event.date)}</span>
+              </div>
+
+              <div class="event-info">
+                ${icons.location}
+                <span>${event.location}</span>
+              </div>
+
+              <div class="event-description">
+                ${event.description}
+              </div>
+            `;
+            container.appendChild(eventCard);
+          });
+        })
+        .catch(error => console.error('Error fetching events:', error));
+    }
+
+    // Fetch events on page load
+    fetchEvents();
+  </script>
+</body>
+</html>

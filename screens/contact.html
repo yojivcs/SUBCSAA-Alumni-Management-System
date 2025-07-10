@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - SUBCSAA</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { 
+      font-family: 'Lexend', sans-serif; 
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #5E3792 0%, #8B5CF6 100%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #5E3792 0%, #8B5CF6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .animate-scaleIn {
+      animation: scaleIn 0.6s ease-out;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(94, 55, 146, 0.1);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(94, 55, 146, 0.1);
+    }
+
+    .input-field {
+      @apply w-full border border-gray-200 rounded-xl p-4 transition-all duration-300;
+    }
+
+    .input-field:focus {
+      @apply outline-none border-[#5E3792] ring-2 ring-[#5E3792]/20;
+    }
+
+    .radio-button {
+      @apply w-5 h-5 text-[#5E3792] border-gray-300 focus:ring-[#5E3792]/20;
+    }
+
+    .submit-button {
+      @apply gradient-bg text-white py-4 px-8 rounded-xl font-medium transition-all duration-300;
+    }
+
+    .submit-button:hover {
+      @apply transform -translate-y-1 shadow-lg shadow-[#5E3792]/20;
+    }
+
+    .contact-info-card {
+      @apply p-6 rounded-xl text-white flex items-center gap-4;
+      background: linear-gradient(135deg, #5E3792 0%, #8B5CF6 100%);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section class="relative w-full min-h-[400px] bg-cover bg-center flex items-center justify-center pt-16 hero-pattern overflow-hidden">
+    <!-- Background Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#5E3792]/90 to-[#8B5CF6]/80"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-6 py-16 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 animate-fadeInUp">
+        Get in Touch
+      </h1>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto animate-fadeInUp" style="animation-delay: 200ms;">
+        Have questions or want to connect? We're here to help you stay engaged with the SUBCSAA community.
+      </p>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-purple-200 rounded-full opacity-20 animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-300 rounded-full opacity-20 animate-pulse delay-1000"></div>
+  </section>
+
+  <!-- Contact Information -->
+  <section class="py-12 -mt-20 relative z-20">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Email -->
+        <div class="contact-info-card animate-scaleIn" style="animation-delay: 200ms;">
+          <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">Email Us</h3>
+            <p class="text-white/90">info@subcsaa.org</p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="contact-info-card animate-scaleIn" style="animation-delay: 400ms;">
+          <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">Call Us</h3>
+            <p class="text-white/90">+880 123 456 789</p>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="contact-info-card animate-scaleIn" style="animation-delay: 600ms;">
+          <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">Visit Us</h3>
+            <p class="text-white/90">Chittagong, Bangladesh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-16">
+    <div class="container mx-auto max-w-4xl">
+      <div class="contact-card p-8 md:p-12 animate-scaleIn">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Send us a <span class="gradient-text">Message</span></h2>
+          <p class="text-gray-600">We'd love to hear from you! Please fill out the form below.</p>
+        </div>
+
+        <!-- Form -->
+        <form action="../php/submit_contact_form.php" method="POST" class="space-y-8">
+          <!-- Name Fields -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="block text-gray-700 font-medium">First Name</label>
+              <input type="text" name="first_name" placeholder="John" class="input-field" required>
+            </div>
+            <div class="space-y-2">
+              <label class="block text-gray-700 font-medium">Last Name</label>
+              <input type="text" name="last_name" placeholder="Doe" class="input-field" required>
+            </div>
+          </div>
+
+          <!-- Contact Fields -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="block text-gray-700 font-medium">Email Address</label>
+              <input type="email" name="email" placeholder="john@example.com" class="input-field" required>
+            </div>
+            <div class="space-y-2">
+              <label class="block text-gray-700 font-medium">Phone Number</label>
+              <input type="tel" name="phone_number" placeholder="+880 123 456 789" class="input-field">
+            </div>
+          </div>
+
+          <!-- Subject Selection -->
+          <div class="space-y-2">
+            <label class="block text-gray-700 font-medium mb-3">What can we help you with?</label>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-[#5E3792] transition-all duration-300">
+                <input type="radio" name="subject" value="General Inquiry" class="radio-button" required>
+                <span class="ml-3">General Inquiry</span>
+              </label>
+              <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-[#5E3792] transition-all duration-300">
+                <input type="radio" name="subject" value="Support" class="radio-button" required>
+                <span class="ml-3">Technical Support</span>
+              </label>
+              <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-[#5E3792] transition-all duration-300">
+                <input type="radio" name="subject" value="Feedback" class="radio-button" required>
+                <span class="ml-3">Feedback</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Message Field -->
+          <div class="space-y-2">
+            <label class="block text-gray-700 font-medium">Your Message</label>
+            <textarea name="message" rows="6" placeholder="Type your message here..." class="input-field resize-none" required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button type="submit" class="submit-button">
+              Send Message
+              <svg class="w-5 h-5 inline-block ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer"></div>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fetch Header and Footer
+      fetch('../components/header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+      
+      fetch('../components/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data);
+
+      // Intersection Observer for animations
+      const animatedElements = document.querySelectorAll('.animate-fadeInUp, .animate-scaleIn');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animatedElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'all 0.6s ease-out';
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>

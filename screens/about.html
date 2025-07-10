@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - SUBCSAA</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../js/scripts.js" defer></script>
+  <style>
+    body {
+      font-family: 'Lexend', sans-serif;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #5E3792 0%, #8B5CF6 100%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #5E3792 0%, #8B5CF6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .animate-scaleIn {
+      animation: scaleIn 0.6s ease-out;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(94, 55, 146, 0.1);
+    }
+
+    .image-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(94, 55, 146, 0.1);
+    }
+
+    .image-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom right, rgba(94, 55, 146, 0.2), rgba(139, 92, 246, 0.1));
+    }
+
+    .counter-value {
+      transition: all 2s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 hero-pattern relative overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto animate-fadeInUp">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          <span class="gradient-text">About</span>
+          <span class="text-[#5E3792]">SUBCSAA</span>
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed">
+          Connecting alumni, fostering growth, and building a stronger community together.
+        </p>
+      </div>
+    </div>
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-purple-200 rounded-full opacity-20 animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-300 rounded-full opacity-20 animate-pulse delay-1000"></div>
+  </section>
+
+  <!-- Who Are We Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Image with Overlay -->
+        <div class="image-card animate-scaleIn">
+          <img src="../assets/images/about-image.jpg" alt="About Us" class="w-full h-[500px] object-cover">
+        </div>
+        <!-- Content -->
+        <div class="animate-fadeInUp">
+          <h2 class="text-4xl font-bold text-[#5E3792] mb-6">Who Are We</h2>
+          <div class="space-y-6 text-gray-600">
+            <p class="text-lg leading-relaxed">
+              The Southern University Bangladesh Computer Science Alumni Association (SUBCSAA) is more than just a network—it's a thriving community of professionals, innovators, and lifelong learners.
+            </p>
+            <p class="text-lg leading-relaxed">
+              We foster meaningful connections between alumni, current students, and faculty through:
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-[#5E3792]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Networking events and professional meetups</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-[#5E3792]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Mentorship programs and knowledge sharing</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-[#5E3792]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Career development workshops</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#5E3792] mb-4">Our Impact in Numbers</h2>
+        <p class="text-xl text-gray-600">Growing stronger together year after year</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Stat 1 -->
+        <div class="stat-card text-center">
+          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 id="yearFounded" class="text-4xl font-bold text-[#5E3792] counter-value">0</h3>
+          <p class="text-gray-600 mt-2">Year Founded</p>
+        </div>
+        <!-- Stat 2 -->
+        <div class="stat-card text-center">
+          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 id="activeAlumni" class="text-4xl font-bold text-[#5E3792] counter-value">0</h3>
+          <p class="text-gray-600 mt-2">Active Alumni</p>
+        </div>
+        <!-- Stat 3 -->
+        <div class="stat-card text-center">
+          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 id="eventsOrganized" class="text-4xl font-bold text-[#5E3792] counter-value">0</h3>
+          <p class="text-gray-600 mt-2">Events Organized</p>
+        </div>
+        <!-- Stat 4 -->
+        <div class="stat-card text-center">
+          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 id="countriesRepresented" class="text-4xl font-bold text-[#5E3792] counter-value">0</h3>
+          <p class="text-gray-600 mt-2">Countries Represented</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Goals Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Content -->
+        <div class="animate-fadeInUp">
+          <h2 class="text-4xl font-bold text-[#5E3792] mb-6">Our Goals</h2>
+          <div class="space-y-8">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 gradient-bg rounded-xl flex-shrink-0 flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Professional Development</h3>
+                <p class="text-gray-600">Foster career growth through workshops, mentorship programs, and networking opportunities.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 gradient-bg rounded-xl flex-shrink-0 flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Community Building</h3>
+                <p class="text-gray-600">Create a strong network of alumni who support and inspire each other.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 gradient-bg rounded-xl flex-shrink-0 flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Knowledge Sharing</h3>
+                <p class="text-gray-600">Facilitate the exchange of expertise and experiences between alumni and current students.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Image -->
+        <div class="image-card animate-scaleIn">
+          <img src="../assets/images/goals-image.png" alt="Our Goals" class="w-full h-[500px] object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Intersection Observer for counter animation
+      const counters = document.querySelectorAll('.counter-value');
+      const counterValues = {
+        yearFounded: 2020,
+        activeAlumni: 500,
+        eventsOrganized: 50,
+        countriesRepresented: 15
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const targetValue = counterValues[counter.id];
+            let currentValue = 0;
+            const duration = 2000; // 2 seconds
+            const increment = targetValue / (duration / 16); // 60fps
+
+            const updateCounter = () => {
+              if (currentValue < targetValue) {
+                currentValue += increment;
+                counter.textContent = Math.round(currentValue);
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent = targetValue;
+              }
+            };
+
+            updateCounter();
+            observer.unobserve(counter);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => observer.observe(counter));
+
+      // Intersection Observer for fade-in animations
+      const fadeElements = document.querySelectorAll('.animate-fadeInUp, .animate-scaleIn');
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      fadeElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'all 0.6s ease-out';
+        fadeObserver.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>

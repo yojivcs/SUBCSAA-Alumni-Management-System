@@ -1,0 +1,33 @@
+SUBCSAA Pre-configured User Accounts
+====================================
+
+Administrator Accounts
+--------------------
+1. Username: admin1
+   Password: password123
+   Access: Full system access, user management, content management
+
+2. Username: admin2
+   Password: admin12
+   Access: Full system access (backup admin)
+
+Regular User Accounts
+-------------------
+1. Username: admahmud
+   Password: 1234
+   Access: Basic user features, profile management
+
+2. Username: rafa2
+   Password: 1234
+   Access: Basic user features, profile management
+
+3. Username: tausif.akbar
+   Password: tausifxx20
+   Access: Basic user features, profile management
+
+4. Username: ibnathtaha
+   Password: tahaishere
+   Access: Basic user features, profile management
+
+Note: For security reasons, please change these passwords immediately after your first login.
+The passwords are securely hashed in the database using modern encryption standards. 
