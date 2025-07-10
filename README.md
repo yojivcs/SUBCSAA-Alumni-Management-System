@@ -251,8 +251,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## 👥 Developer
 
 This project was developed by:
-- **Adnan Mahmud**
-  - Full Stack Developer
+- **VIJOY**
   - LinkedIn: [linkedin.com/in/vintech]
 
 ## 📞 Contact
